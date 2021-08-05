@@ -1,6 +1,8 @@
 all:
 	gcc -o main main.c
-	mv main ../bin/
+	arm-linux-gnueabi-gcc -o main_rb main.c	
+x86: main.c
+	gcc -o main main.c
 raspberry: main.c
-	cc -o main_rb main.c
-	mv main_rb ../bin/
+	arm-linux-gnueabi-gcc -o main_rb main.c	
+	#scp main_rb pi@192.168.50.98:/home/pi/Documents
